@@ -1,0 +1,186 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th {
+  padding: 12px 15px;
+}
+.styled-table th:hover {
+  cursor: pointer;
+}
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:hover {
+  cursor: pointer;
+}
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.styled-table tbody .active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  line-height: 24px;
+}
+a:hover {
+  cursor: pointer;
+}
+a:before {
+  content: "";
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+a:after {
+  content: "";
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+.effect {
+  padding-top: 10px;
+}
+.effect:before {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: purple;
+  transform: scaleX(0);
+}
+.effect:hover:before {
+  transform: scaleX(1);
+}
+
+button {
+  background: transparent;
+  border: 0;
+  color: #666;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+button:hover {
+  color: #111;
+}
+button.open-modal {
+  background: #000;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+}
+
+/* Modal styles */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  position: relative;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.modal .modal-backdrop {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: black;
+  /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+.modal .modal-content {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 600px;
+  position: fixed;
+  top: -100%;
+  transition: all 0.6s ease;
+  z-index: 1000;
+}
+.modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 1.5rem;
+}
+.modal .modal-header .close-modal {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+}
+.modal .modal-header .close-modal:hover {
+  color: #000;
+}
+.modal .modal-body {
+  padding: 1.5rem;
+}
+.modal .modal-footer {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+  text-align: right;
+}
+.modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.modal.visible .modal-content {
+  top: 25%;
+}
+
+/*# sourceMappingURL=style.css.map */
