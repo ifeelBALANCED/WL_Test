@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://kit.fontawesome.com/107e6e3afc.js" crossorigin="anonymous"></script>
     <title>Vite App</title>
 </head>
+
 <body>
 <div class="wrapper">
     <table class="styled-table">
@@ -34,35 +32,42 @@
             <span class="modal-backdrop close-modal"></span>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Add column</h2>
+                    <h2 class="modal-title">Add person</h2>
                     <button class="close-modal">&times</button>
                 </div>
-                <div class="modal-body">
+                <form class="modal-body">
                     <div class="modal-body__inner input-upper">
                         <label for="name">Name:</label>
-                        <input id="name" required>
+                        <input id="name" class="effect-3" required>
                     </div>
                     <div class="modal-body__inner input-upper">
                         <label for="username">Username:</label>
-                        <input id="username" required>
+                        <input id="username" class="effect-3" required>
                     </div>
                     <div class="modal-body__inner input-upper">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" class="effect-3" required>
                     </div>
                     <div class="modal-body__inner input-upper">
                         <label for="website">Website:</label>
-                        <input id="website" required>
+                        <input id="website" class="effect-3" required>
                     </div>
-                </div>
+                </form>
                 <div class="modal-footer">
-                    <button class="close-modal">Ok</button>
+                    <button class="submit-btn">Ok</button>
                     <button class="close-modal">Cancel</button>
                 </div>
             </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="detailed-modal" id="detailed-modal">
+            <button class="detailed-modal-close-btn" id="close-btn"><i class="fa fa-times"></i></button>
+            <h1 class="detailed-modal-title sixth"></h1>
+            <div class="detailed-modal-body"></div>
         </div>
     </div>
 </div>
 <script type="module" src="./main.js"></script>
 </body>
+
 </html>
