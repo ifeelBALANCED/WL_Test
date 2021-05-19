@@ -10,8 +10,10 @@ const fetchUsers = async () => {
         const trs = document.querySelectorAll('tbody > tr')
         trs.forEach(tr => tr.addEventListener('click', (evt) => {
             const modalBody = document.querySelector('.modal-body'),
+                modalTitle = document.querySelector('.modal-title'),
                 trValue = evt.currentTarget.innerText
             const [num, name, username, email, site] = trValue.split('\t')
+            modalTitle.textContent = 'Detailed info'
             modalBody.textContent = `
             № - ${num},
             Name - ${name},
@@ -28,7 +30,7 @@ const fetchUsers = async () => {
 
 const initialize = users => {
     let wrapper = document.querySelector("tbody");
-    users.forEach(
+    users.map(
         ({name, username, email, website, id}) => {
             wrapper.innerHTML += `
          <tr>
@@ -38,9 +40,6 @@ const initialize = users => {
            <td>${email}</td>
            <td>
               <a class="effect">${website}</a>
-           </td>
-           <td>
-              <i class="fas fa-user-times"></i>
            </td>
          </tr>
         `
@@ -52,13 +51,17 @@ const initialize = users => {
 fetchUsers();
 
 
-const modal = document.querySelector(".modal"),
-    closeModalButtons = document.querySelectorAll(".close-modal");
+const openModal = () => modal.classList.add('visible');
 
-const openModal = () => modal.classList.add("visible");
+const closeModal = () => modal.classList.remove('visible');
+const openModalButtons = document.querySelectorAll('.open-modal'),
+    modal = document.querySelector('.modal'),
+    closeModalButtons = document.querySelectorAll('.close-modal');
 
-const closeModal = () => modal.classList.remove("visible");
+openModalButtons.forEach(openBtn => {
+    openBtn.addEventListener('click', openModal)
+});
 
-closeModalButtons.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", closeModal);
+closeModalButtons.forEach(closeBtn => {
+    closeBtn.addEventListener('click', closeModal)
 });

@@ -24,27 +24,36 @@
             <th>Username</th>
             <th>Email</th>
             <th>Website</th>
-            <th>Operations</th>
         </tr>
         </thead>
         <tbody></tbody>
     </table>
     <div>
+        <button class="open-modal">Add</button>
         <div class="modal">
             <span class="modal-backdrop close-modal"></span>
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Detailed information</h2>
+                    <h2 class="modal-title">Add column</h2>
                     <button class="close-modal">&times</button>
                 </div>
                 <div class="modal-body">
-                    <h3>Modal body</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Cupiditate quos neque placeat totam, debitis error sunt saepe
-                        quia, mollitia ab nam doloremque. Expedita assumenda provident,
-                        dolore doloribus molestias reprehenderit aliquam?
-                    </p>
+                    <div class="modal-body__inner input-upper">
+                        <label for="name">Name:</label>
+                        <input id="name" required>
+                    </div>
+                    <div class="modal-body__inner input-upper">
+                        <label for="username">Username:</label>
+                        <input id="username" required>
+                    </div>
+                    <div class="modal-body__inner input-upper">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="modal-body__inner input-upper">
+                        <label for="website">Website:</label>
+                        <input id="website" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="close-modal">Ok</button>
